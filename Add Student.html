@@ -9,7 +9,6 @@
     <!-- css -->
     <link href="css/bootstrap.min.css" rel="stylesheet"/>
     <link href="css/fancybox/jquery.fancybox.css" rel="stylesheet">
-    <link href="css/jcarousel.css" rel="stylesheet"/>
     <link href="css/flexslider.css" rel="stylesheet"/>
     <link href="css/style.css" rel="stylesheet"/>
 
@@ -72,15 +71,9 @@
                             Your message has been sent. Thank you!
                         </div>
                         <div class="col-lg-64">
-                            <div class="col-lg-4 field">
+                            <div class="col-lg-12 field">
                                 <input type="text" name="name" placeholder="*Full name" data-rule="maxlen:4"
                                        data-msg="Please enter at least 4 chars"/>
-                                <div class="validation">
-                                </div>
-                            </div>
-                            <div class="col-lg-12 field">
-                                <input type="text" name="email" placeholder="*Email address"
-                                       data-rule="email" data-msg="Please enter a valid email"/>
                                 <div class="validation">
                                 </div>
                             </div>
@@ -96,23 +89,27 @@
                                 <div class="validation">
                                 </div>
                             </div>
-                            <div class="col-lg-12 field">
-                                <input type="text" name="Department" placeholder="* Department" data-msg="Please enter a valid Department"/>
+                            <div class="col-lg-12 field ">
+                                <input type="text" name="Department" placeholder="*Department" data-msg="Please enter a valid Department"/>
                                 <div class="validation">
                                 </div>
                             </div>
                             <div class="col-lg-12 field">
-                                <input type="text" name="Age" placeholder="*Age" data-rule="maxlen:4"
-                                       data-msg="Please enter at least 4 chars"/>
+                                <input type="text" name="Level" placeholder="*Level" data-rule="maxlen:4"/>
                                 <div class="validation">
                                 </div>
                             </div>
-                            <!--<div class="col-lg-12 margintop10 field">-->
-                                <!--<textarea rows="12" name="message" class="input-block-level"-->
-                                          <!--placeholder="* Your message here..." data-rule="required"-->
-                                          <!--data-msg="Please write something"></textarea>-->
-                                <!--<div class="validation">-->
-                                <!--</div>-->
+                            <div class="col-lg-12 field">
+                                <input type="text" name="age" placeholder="*Age" data-rule="maxlen:4"/>
+                                <div class="validation">
+                                </div>
+                            </div><div class="col-lg-12 field">
+                            <input type="text" name="cgpa" placeholder="*CGPA" data-rule="maxlen:4"/>
+                            <div class="validation">
+                            </div>
+                        </div>
+
+                            <div class="col-lg-12 margintop10 field">
                                 <p>
                                     <button class="pull-left btn btn-theme margintop10 " type="submit" style="margin-left: 15px">Submit
                                     </button>

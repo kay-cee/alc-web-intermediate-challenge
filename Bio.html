@@ -75,28 +75,27 @@
                                     <tr>
                                         <th>S/N</th>
                                         <th>Name</th>
-                                        <th>Matric Name</th>
+                                        <th>Matric No</th>
                                         <th>Faculty</th>
                                         <th>Department</th>
                                         <th>Level</th>
                                         <th>Age</th>
                                         <th>CGPA</th>
                                         <th>Action</th>
-                                        <td></td>
                                     </tr>
                                     </thead>
                                     <tbody>
                                     <tr>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>Mess it up</td>
-                                        <td>4-24</td>
+                                        <td>1</td>
+                                        <td>Kamaru Adams</td>
+                                        <td>ESM/2012/022</td>
+                                        <td>Art</td>
+                                        <td>Sociology</td>
+                                        <td>200</td>
+                                        <td>24</td>
+                                        <td>4.24</td>
                                         <td><a href="Edit_Student.html" class="btn btn-info">Edit</a></td>
-                                        <td><a class="btn btn-danger" data-hover="" data-msg="Are you sure you want to delete this student?">Delete</a></td>
+                                        <td><a class="btn btn-danger" data-toggle="modal" data-target="#delete">Delete</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
@@ -107,6 +106,66 @@
             </div>
         </div>
     </section>
+    <!--modal playground-->
+    <!-- Modal -->
+    <div id="delete" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Confirm Delete</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete this student?</p>
+                    <p><b>Note: </b>This action cannot be undone</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!--end modal-->
+
+    <!--gif center-->
+    <div id="gif" style="display: none;">
+        <div id="text">
+            <img src="/img/gif/loading.gif" style="height: 100%;width: 100%;">
+        </div>
+    </div>
+
+    <script>
+        let showDialog = function (){
+            document.getElementById("gif").style.display = "block";
+        };
+
+        let hideDialog = function () {
+            document.getElementById("gif").style.display = "none";
+        };
+        $('contactform').onclick('submit', function () {
+            showDialog();
+            let item = $('form input');
+            let student = {item: item.val()};
+
+            $.ajax({
+                type : 'POST',
+                url : '/students/edit/add-student',
+                data : student,
+                success : function (data) {
+                    hideDialog();
+                    let reply = 'Student has been successfully added';
+                    alert(reply);
+                    window.document.location = 'all-students.html'
+                }
+            });
+
+            return false;
+        });
+    </script>
     <footer>
         <div class="container">
             <div class="row">
